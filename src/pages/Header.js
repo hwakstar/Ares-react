@@ -46,6 +46,9 @@ export default function Header() {
               <li>
               <Link to="/investment">Investment</Link>
                </li>
+              <li className="wallet-connect-li">
+                <ConnectWallet />
+              </li>
             </ul>
           </div>
           <div className="navbar-middle">

@@ -3613,11 +3613,24 @@ header .navbar-right .wallet-connect {
   margin: 0;
   padding: 0;
   list-style: none;
-  translate: none;
-  rotate: none;
-  scale: none;
-  transform: translate(0px, 0px);
   opacity: 1;
+}
+
+header .navbar-left .navbar-menu .wallet-connect-li {
+  display: none;
+  list-style: none;
+  opacity: 1;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+@media screen and (max-width: 1003px) {
+  header .navbar-right .wallet-connect {
+    display: none;
+  }
+  header .navbar-left .navbar-menu .wallet-connect-li {
+    display: block;
+  }
 }
 
 @keyframes skeleton-loading {
@@ -3631,11 +3644,20 @@ header .navbar-right .wallet-connect {
     opacity: 1;
   }
 }
+header .navbar-left .navbar-menu .wallet-connect-li div button {
+  color: #fff;
+  font-family: "ManifoldExtdCF-DemiBold";
+  font-weight: 600;
+  font-size: 13px;
+  padding: 0.63rem 0.94rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
 
 header .navbar-right .wallet-connect li div button {
   color: #dcb533;
   font-family: "ManifoldExtdCF-DemiBold";
-  animation: skeleton-loading 4s linear;
+  animation: skeleton-loading 3s linear;
 }
 
 @media screen and (min-width: 1004px) {
@@ -3652,6 +3674,7 @@ header .navbar-right .wallet-connect li div button {
     align-items: center;
   }
 }
+header .navbar-left .navbar-menu .wallet-connect-li div button,
 header .navbar-left .navbar-menu li a,
 header .navbar-left .navbar-socials li a,
 header .navbar-right .navbar-menu li a,
@@ -3667,6 +3690,9 @@ header .navbar-right .navbar-socials li a {
   -webkit-transition: color 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: color 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
+header .navbar-left .navbar-menu .wallet-connect-li div button:hover,
+header .navbar-left .navbar-menu .wallet-connect-li div button:focus,
+header .navbar-left .navbar-menu .wallet-connect-li div button.active,
 header .navbar-left .navbar-menu li a:hover,
 header .navbar-left .navbar-menu li a:focus,
 header .navbar-left .navbar-menu li a.active,
@@ -3707,6 +3733,7 @@ header .navbar-right .navbar-socials li a.active {
     padding: 1.57rem 0.94rem;
   }
 }
+header .navbar-left .navbar-menu .wallet-connect-li.active div button,
 header .navbar-left .navbar-menu li.active a,
 header .navbar-left .navbar-socials li.active a,
 header .navbar-right .navbar-menu li.active a,
