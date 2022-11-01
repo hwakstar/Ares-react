@@ -19,7 +19,7 @@ const WalletListIndex = (props) => {
     return (
         <ListItem button className="item" onClick={() => chooseWallet()}>
             <ListItemIcon className="symbol">
-                {activating ? <CircularProgress /> : <img src={wallet.logo} />}
+                {activating ? <CircularProgress /> : <img width={40} src={wallet.logo} />}
             </ListItemIcon>
             <ListItemText
                 primary={wallet.title}

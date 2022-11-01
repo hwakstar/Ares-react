@@ -186,6 +186,8 @@ export default function Header() {
                   <span>Opensea</span>
                 </a>
               </li>
+            </ul>
+            <ul className="wallet-connect">
               <li>
                 <ConnectWallet />
               </li>

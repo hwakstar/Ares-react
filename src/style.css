@@ -3608,6 +3608,36 @@ header .navbar-right .navbar-socials {
   transform: translate(0px, 0px);
   opacity: 1;
 }
+
+header .navbar-right .wallet-connect {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  translate: none;
+  rotate: none;
+  scale: none;
+  transform: translate(0px, 0px);
+  opacity: 1;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+header .navbar-right .wallet-connect li div button {
+  color: #dcb533;
+  font-family: "ManifoldExtdCF-DemiBold";
+  animation: skeleton-loading 4s linear;
+}
+
 @media screen and (min-width: 1004px) {
   header .navbar-left .navbar-menu,
   header .navbar-left .navbar-socials,
@@ -3729,7 +3759,8 @@ header .navbar-right .navbar-socials li a:focus img {
     display: flex;
     -webkit-box-pack: start;
     -ms-flex-pack: start;
-    justify-content: flex-start;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 header .navbar-menu {
