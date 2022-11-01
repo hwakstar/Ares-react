@@ -3614,8 +3614,6 @@ header .navbar-right .wallet-connect {
   padding: 0;
   list-style: none;
   opacity: 1;
-  letter-spacing: 1px;
-  text-transform: uppercase;
 }
 
 header .navbar-right .wallet-connect li div button:hover,
@@ -3623,7 +3621,6 @@ header .navbar-right .wallet-connect li div button:focus,
 header .navbar-right .wallet-connect li div button.active {
   color: #fff;
 }
-
 
 header .navbar-left .navbar-menu .wallet-connect-li {
   display: none;
@@ -4283,7 +4280,6 @@ section {
   -webkit-transform: translateX(85px);
   transform: translateX(85px);
   mix-blend-mode: hard-light;
- 
 }
 @media screen and (min-width: 1004px) {
   .about-section .about-section-background {
@@ -5664,8 +5660,8 @@ img:focus {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url('./images/content/beautiful-generic-unbranded-sport-car-in-the-dark-3d-illustration.png'); background-position-x: 68%
-
+  background-image: url("./images/content/beautiful-generic-unbranded-sport-car-in-the-dark-3d-illustration.png");
+  background-position-x: 68%;
 }
 .project-item video {
   mix-blend-mode: overlay;
@@ -7029,7 +7025,6 @@ img:focus {
   animation-timing-function: ease-in-out;
 }
 .has-animation.animated {
-  
   -webkit-animation-name: has-animation;
   animation-name: has-animation;
   -webkit-animation-duration: 2000ms;
@@ -9069,71 +9064,81 @@ button.swiper-pagination-bullet {
 .about-section-me {
   background-image: url("./images/content/fashion-portrait-of-young-businessman-handsome-model-man-in-casual-cloth-suit-with-accessories-on-hands6.png");
 }
-.img-www{
-  -webkit-backdrop-filter: brightness()
+.img-www {
+  -webkit-backdrop-filter: brightness();
 }
-.img-www1{
-  box-shadow: 0 0 10px #000000
+.img-www1 {
+  box-shadow: 0 0 10px #000000;
 }
-.pro-a{
-  background-image: url('./images/content/ares-nft-project.png'); z-index: 1; background-position-y: 29%
+.pro-a {
+  background-image: url("./images/content/ares-nft-project.png");
+  z-index: 1;
+  background-position-y: 29%;
 }
-.pro-b{
-  background-image: url('./images/content/why-ares-investment-is-driven-by-ambition.png')
+.pro-b {
+  background-image: url("./images/content/why-ares-investment-is-driven-by-ambition.png");
 }
-.about-bg-image{
-  background-image: url('./images/content/about-viewport-bg.png')
+.about-bg-image {
+  background-image: url("./images/content/about-viewport-bg.png");
 }
-.section-top .section-top-about, .about-bg-image1{
-  background-image: url('./images/content/silhouette-of-confident-businesspeople.jpg'); 
+.section-top .section-top-about,
+.about-bg-image1 {
+  background-image: url("./images/content/silhouette-of-confident-businesspeople.jpg");
   background-position: top;
 }
-.bkg1{
-  background-image: url('./images/content/man-fixes-buttons-his-white-shirt.jpg')
+.bkg1 {
+  background-image: url("./images/content/man-fixes-buttons-his-white-shirt.jpg");
 }
-.bkg2{
-  background-image: url('./images/content/gold-king-winner-surround-with-silver-chess-pieces-chess-board-game-competitionconcept-strategy.png')
+.bkg2 {
+  background-image: url("./images/content/gold-king-winner-surround-with-silver-chess-pieces-chess-board-game-competitionconcept-strategy.png");
 }
-.pag-back{
-  background-image: url('./images/content/edition-viewport-bg.png'); opacity: .055;
+.pag-back {
+  background-image: url("./images/content/edition-viewport-bg.png");
+  opacity: 0.055;
 }
-.aa{
-  background-image: url('images/content/284396.png'); background-position-y: 0; background-size: contain; opacity: .6;
+.aa {
+  background-image: url("images/content/284396.png");
+  background-position-y: 0;
+  background-size: contain;
+  opacity: 0.6;
 }
-.bb{
-  background-image: url('images/content/284396-fill.png');  background-position-y: 0; background-size: contain; 
+.bb {
+  background-image: url("images/content/284396-fill.png");
+  background-position-y: 0;
+  background-size: contain;
 }
-.cc{
+.cc {
   z-index: 1;
 }
-.dd{
-  background-image: url('images/content/beautiful-generic-unbranded-sport-car-in-the-dark-3d-illustration-lg.png')
+.dd {
+  background-image: url("images/content/beautiful-generic-unbranded-sport-car-in-the-dark-3d-illustration-lg.png");
 }
-.ee{
-  position: relative; z-index: 2;
+.ee {
+  position: relative;
+  z-index: 2;
 }
-.ff{
-  background-image: url('images/content/investment-viewport-bg.png');
+.ff {
+  background-image: url("images/content/investment-viewport-bg.png");
 }
-.gg{
-  background-image: url('images/content/3d-rendering-artificial-intelligence-hardware.jpg')
+.gg {
+  background-image: url("images/content/3d-rendering-artificial-intelligence-hardware.jpg");
 }
-.hh{
+.hh {
   mix-blend-mode: lighten;
 }
-.ii{
-  background-image: url('images/content/nft-viewport-bg.png')
+.ii {
+  background-image: url("images/content/nft-viewport-bg.png");
 }
-.jj{
-  position: relative; z-index: 1
+.jj {
+  position: relative;
+  z-index: 1;
 }
-.ll{
-  background-image: url('images/content/nft-viewport-bg.png')
+.ll {
+  background-image: url("images/content/nft-viewport-bg.png");
 }
-.minist{
-  background-image: url('images/content/mint-your-ares-nft-bg.png')
-  
+.minist {
+  background-image: url("images/content/mint-your-ares-nft-bg.png");
 }
-.claim{
-  background-image: url('images/content/mint-your-ares-nft-bg.png')
+.claim {
+  background-image: url("images/content/mint-your-ares-nft-bg.png");
 }

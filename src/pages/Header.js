@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import ConnectWallet from "../components/connectWallet/ConnectWallet"
+import ConnectWallet from "../components/connectWallet/ConnectWallet";
 
 import Headerone from "../images/content/twitter.svg";
 import Headertwo from "../images/content/instagram.svg";
@@ -29,23 +29,19 @@ export default function Header() {
                 <Link to="/edition">Edition</Link>
               </li>
               <li className="dropdown">
-                <Link toa-dropdown>
-                  {" "}
-                  NFT{" "}
-                </Link>
+                <Link toa-dropdown> NFT </Link>
                 <ul className="dropdown-menu">
                   <li>
-                  <Link to="/aresnft">AresNFT</Link>
+                    <Link to="/aresnft">AresNFT</Link>
                   </li>
                   <li>
-                  <Link to="/advantage">Advantage</Link>
-                   
+                    <Link to="/advantage">Advantage</Link>
                   </li>
                 </ul>
               </li>
               <li>
-              <Link to="/investment">Investment</Link>
-               </li>
+                <Link to="/investment">Investment</Link>
+              </li>
               <li className="wallet-connect-li">
                 <ConnectWallet />
               </li>
@@ -59,9 +55,9 @@ export default function Header() {
               </a>
             </div>
             <div className="navbar-middle-item">
-            <a href="/">
+              <a href="/">
                 <img src={logo} className="img-fluid" alt="ARES" />
-                </a>
+              </a>
             </div>
             <div className="navbar-middle-item">
               <a href="#" className="nav-socials-toggle">
