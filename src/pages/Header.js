@@ -27,7 +27,7 @@ export default function Header() {
               </li>
               <li>
                 <Link to="/edition">Edition</Link>
-            </li>
+              </li>
               <li className="dropdown">
                 <Link toa-dropdown>
                   {" "}
