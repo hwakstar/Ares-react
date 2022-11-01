@@ -3614,7 +3614,16 @@ header .navbar-right .wallet-connect {
   padding: 0;
   list-style: none;
   opacity: 1;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
+
+header .navbar-right .wallet-connect li div button:hover,
+header .navbar-right .wallet-connect li div button:focus,
+header .navbar-right .wallet-connect li div button.active {
+  color: #fff;
+}
+
 
 header .navbar-left .navbar-menu .wallet-connect-li {
   display: none;
