@@ -13,23 +13,27 @@ import Dashboard from "./pages/Dashboard";
 import Mint from "./pages/Mint";
 import Claim  from "./pages/Claim";
 import Next from "./pages/Next";
+import Web3Provider from "./providers/web3";
+
 export default function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />}>
-            <Route index element={<Dashboard />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/edition" element={<Edition />} />
-            <Route path="/mint" element={<Mint />} />
-            <Route path="/claim" element={<Claim/>} />
-            <Route path="/aresnft" element={<AresNFT />} />
-            <Route path="/advantage" element={<Advantage />} />
-            <Route path="/investment" element={<Investment />} />
-            <Route path="/next" element={<Next />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <Web3Provider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />}>
+              <Route index element={<Dashboard />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/edition" element={<Edition />} />
+              <Route path="/mint" element={<Mint />} />
+              <Route path="/claim" element={<Claim/>} />
+              <Route path="/aresnft" element={<AresNFT />} />
+              <Route path="/advantage" element={<Advantage />} />
+              <Route path="/investment" element={<Investment />} />
+              <Route path="/next" element={<Next />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </Web3Provider>
   );
 }
 const root = ReactDOM.hydrateRoot(document.getElementById("root"));

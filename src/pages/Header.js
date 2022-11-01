@@ -1,4 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
+import ConnectWallet from "../components/connectWallet/ConnectWallet"
+
 import Headerone from "../images/content/twitter.svg";
 import Headertwo from "../images/content/instagram.svg";
 import Headerthree from "../images/content/discord.svg";
@@ -7,9 +11,10 @@ import Headerfive from "../images/content/tiktok.svg";
 import Headersix from "../images/content/linkedin.svg";
 import Headerseven from "../images/content/facebook.svg";
 import Headereight from "../images/content/opensea.svg";
-import "../style.css";
-import { Link } from "react-router-dom";
 import logo from "../images/content/logo.svg";
+
+import "../style.css";
+
 export default function Header() {
   return (
     <header color-on-scroll="1" className="nav-scroll">
@@ -180,6 +185,9 @@ export default function Header() {
                   <img src={Headereight} className="img-fluid" />
                   <span>Opensea</span>
                 </a>
+              </li>
+              <li>
+                <ConnectWallet />
               </li>
             </ul>
           </div>
