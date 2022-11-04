@@ -11,15 +11,19 @@ const WalletListIndex = (props) => {
     const [activating, setActivating] = useState(false);
     const chooseWallet = async () => {
         setActivating(true);
-        console.log(wallet)
         await activate(wallet.connector);
+        const walletConnectData = {
+            connection: true,
+            walletName: wallet.title
+        }
+        localStorage.setItem('aresWalletConnect', JSON.stringify(walletConnectData));
         setActivating(false);
         closeModal();
     };
     return (
-        <ListItem button className="item" onClick={() => chooseWallet()}>
+        <ListItem className="item" onClick={() => chooseWallet()}>
             <ListItemIcon className="symbol">
-                {activating ? <CircularProgress /> : <img width={40} src={wallet.logo} />}
+                {activating ? <CircularProgress /> : <img width={40} src={wallet.logo} alt={wallet.title} />}
             </ListItemIcon>
             <ListItemText
                 primary={wallet.title}

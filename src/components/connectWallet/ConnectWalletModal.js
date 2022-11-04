@@ -35,59 +35,6 @@ const CustomDialog = styled(Dialog)(({ theme }) => ({
           }
         }
       }
-    //   "& .action": {
-    //     padding: "2 2",
-    //     paddingLeft: "3",
-    //     "& h2": {
-    //       width: "100%",
-    //       display: "flex",
-    //       justifyContent: "space-between",
-    //       alignItems: "center",
-    //     },
-    //     "& button": {
-    //       marginTop: "6",
-    //       marginBottom: "6",
-    //       padding: "0px",
-    //     },
-    //   },
-    //   "& .title": {
-    //     fontSize: 20,
-    //     textAlign: "center",
-    //     fontWeight: "bold",
-    //     marginLeft: 0,
-    //     margin: "auto",
-    //     color: "#e55370",
-    //   },
-    //   "& .subtitle": {
-    //     fontWeight: 600,
-    //     textAlign: "center",
-    //     "& b": {
-    //       padding: "0 2",
-    //     },
-    //   },
-    //   "& .walletList": {
-    //     padding: "4 0",
-    //     "& .item": {
-    //       padding: "1 4",
-    //       borderRadius: 16,
-    //       border: "none",
-    //       "& .symbol": {
-    //         "& img": {
-    //           width: 42,
-    //           height: 42,
-    //         },
-    //       },
-    //       "& .name": {
-    //         "& > span": {
-    //           fontWeight: 600,
-    //         },
-    //         "& > p": {
-    //           fontWeight: 600,
-    //         },
-    //         padding: "0 2",
-    //       },
-    //     },
-    //   },
     },
   },
 }));

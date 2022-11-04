@@ -1,6 +1,7 @@
 import { useWeb3React } from "@web3-react/core";
-import { injected, walletconnect } from "./connectors";
+import { injected, walletconnect, coinbase } from "./connectors";
 import MetaMaskLogo from "../images/svg/meta-mask.svg";
+import CoinbaseLogo from "../images/svg/coinbase.svg";
 import WalletConnect from "../images/svg/wallet-connect.svg";
 
 const wallets = [
@@ -9,6 +10,12 @@ const wallets = [
         description: "Connect to your MetaMask Wallet",
         logo: MetaMaskLogo,
         connector: injected,
+    },
+    {
+        title: "Coinbase",
+        description: "Connect to your Coinbase Wallet",
+        logo: CoinbaseLogo,
+        connector: coinbase,
     },
     {
         title: "WalletConnect",
@@ -28,11 +35,20 @@ const ConnectedWallet = () => {
                     logo: MetaMaskLogo,
                 };
             }
+            case coinbase: {
+                return {
+                    name: "Coinbase",
+                    logo: CoinbaseLogo
+                }
+            }
             case walletconnect: {
                 return {
                     name: "WalletConnect",
                     logo: WalletConnect,
                 };
+            }
+            default: {
+                return {};
             }
         }
     } else {

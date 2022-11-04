@@ -3,16 +3,17 @@ import { useWeb3React } from "@web3-react/core";
 import { reduceAddress } from "../../utils/common";
 
 const customStyle = {
-    background: "none",
     border: "none",
     fontWeight: "bold",
-    cursor: "pointer"
+    cursor: "pointer",
+    padding: "0.8em",
+    borderRadius: "1em",
+    marginLeft: "1.5em"
 }
 
 const ConnectWalletButton = (props) => {
     const { changeWalletListModalState } = props;
     const { account } = useWeb3React();
-    console.log(account)
     const openWalletListModal = () => {
         changeWalletListModalState(true);
     };

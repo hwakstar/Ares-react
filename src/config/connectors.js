@@ -1,3 +1,4 @@
+import { WalletLinkConnector } from "@web3-react/walletlink-connector";
 import { InjectedConnector } from "@web3-react/injected-connector";
 import { WalletConnectConnector } from "@web3-react/walletconnect-connector";
 
@@ -16,6 +17,12 @@ export const RPC_URLS = {
     [Chains.GOERLI]:
         "https://goerli.infura.io/v3/fcbd5e4aded041b9bf226eb446608dd1",
 };
+
+export const coinbase = new WalletLinkConnector({
+    url: "https://mainnet.infura.io/v3/fcbd5e4aded041b9bf226eb446608dd1",
+    appName: "Web3-react coinbase",
+    supportedChainIds: [Chains.ETHEREUM, Chains.GOERLI],
+});
 
 export const injected = new InjectedConnector({
     supportedChainIds: [Chains.ETHEREUM, Chains.GOERLI],
