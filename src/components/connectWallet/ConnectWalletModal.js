@@ -2,7 +2,7 @@ import React from "react";
 import Dialog from "@mui/material/Dialog";
 import List from "@mui/material/List";
 import { styled } from "@mui/material/styles";
-import { wallets } from "../../config/wallets";
+import connectors from "../../config/connectors";
 import WalletListIndex from "./WalletListIndex";
 
 const CustomDialog = styled(Dialog)(({ theme }) => ({
@@ -52,10 +52,10 @@ const ConnectWalletModal = (props) => {
     >
       <h2>Connect Wallet</h2>
       <List className="walletList">
-        {wallets.map((wallet, index) => (
+        {connectors.map((connector, index) => (
           <WalletListIndex
             key={`walletList-${index}`}
-            wallet={wallet}
+            connector={connector}
             closeModal={closeModal}
           />
         ))}

@@ -1,5 +1,6 @@
 import React from "react";
-import { useWeb3React } from "@web3-react/core";
+// import { useWeb3React } from "@web3-react/core";
+import { useAccount, useDisconnect } from 'wagmi'
 import { reduceAddress } from "../../utils/common";
 
 const customStyle = {
@@ -12,15 +13,20 @@ const customStyle = {
 }
 
 const ConnectWalletButton = (props) => {
+    const { isConnected, address } = useAccount()
+    const { disconnect } = useDisconnect()
     const { changeWalletListModalState } = props;
-    const { account } = useWeb3React();
+    // const { account, deactivate } = useWeb3React();
     const openWalletListModal = () => {
         changeWalletListModalState(true);
     };
+    const closeWalletListModal = () => {
+        disconnect()
+    }
     return (
         <>
-            {account ? (
-                <button style={customStyle}>{reduceAddress(account)}</button>
+            {isConnected ? (
+                <button style={customStyle} onClick={closeWalletListModal}>{reduceAddress(address)}</button>
             ) : (
                 <button style={customStyle} onClick={openWalletListModal}>Connect Wallet</button>
             )}
