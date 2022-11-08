@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { WagmiConfig } from 'wagmi'
 import Home from "./Home";
 import About from "./About";
 import Investment from "./Investment";
@@ -11,31 +10,28 @@ import reportWebVitals from "./reportWebVitals";
 import Advantage from "./Advantage";
 import Dashboard from "./Dashboard";
 import Claim  from "./App";
-// import Web3Provider from "./providers/web3";
-import { client } from './utils/wagmi'
+import Web3Provider from "./providers/web3";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <Web3Provider> */}
-      <WagmiConfig client={client}>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Home />}>
-                <Route index element={<Dashboard />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/edition" element={<Edition />} />
-                <Route path="/claim" element={<Claim/>} />
-                <Route path="/aresnft" element={<AresNFT />} />
-                <Route path="/advantage" element={<Advantage />} />
-                <Route path="/investment" element={<Investment />} />      
-                  
-            </Route>
-            <Route path="/claimt" element={<Claim/>} />
-          </Routes>
-        </BrowserRouter>
-      </WagmiConfig>
-    {/* </Web3Provider> */}
+    <Web3Provider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />}>
+              <Route index element={<Dashboard />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/edition" element={<Edition />} />
+              <Route path="/claim" element={<Claim/>} />
+              <Route path="/aresnft" element={<AresNFT />} />
+              <Route path="/advantage" element={<Advantage />} />
+              <Route path="/investment" element={<Investment />} />      
+                
+          </Route>
+          <Route path="/claimt" element={<Claim/>} />
+        </Routes>
+      </BrowserRouter>
+    </Web3Provider>
   </React.StrictMode>
 );
 

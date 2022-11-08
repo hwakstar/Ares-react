@@ -7794,8 +7794,9 @@ form.sent .wpcf7-response-output {
   margin: 0 0 15px;
 }
 .modal-content .nft-form-top,
-.modal-content .nft-form-top .nft-form-m a,
-.modal-content .nft-form-top .nft-form-p a {
+.modal-content .nft-form-top .nft-form-m button,
+.modal-content .nft-form-top .nft-form-p button {
+  z-index: 100;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   display: -webkit-box;
@@ -7803,8 +7804,8 @@ form.sent .wpcf7-response-output {
   display: flex;
   justify-content: center;
 }
-.modal-content .nft-form-top .nft-form-m a,
-.modal-content .nft-form-top .nft-form-p a {
+.modal-content .nft-form-top .nft-form-m button,
+.modal-content .nft-form-top .nft-form-p button {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -7820,14 +7821,19 @@ form.sent .wpcf7-response-output {
     border-color 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   width: 62px;
 }
-.modal-content .nft-form-top .nft-form-m a:focus,
-.modal-content .nft-form-top .nft-form-m a:hover,
-.modal-content .nft-form-top .nft-form-p a:focus,
-.modal-content .nft-form-top .nft-form-p a:hover {
+.modal-content .nft-form-top .nft-form-m button:focus,
+.modal-content .nft-form-top .nft-form-m button:hover,
+.modal-content .nft-form-top .nft-form-p button:focus,
+.modal-content .nft-form-top .nft-form-p button:hover {
   background-color: #bc9820;
   color: #fff;
   cursor: pointer;
   text-decoration: none;
+}
+.modal-content .nft-form-top .nft-form-m button:disabled,
+.modal-content .nft-form-top .nft-form-p button:disabled {
+  background-color: #bc9820;
+  opacity: 0.5;
 }
 .modal-content .nft-form-top .nft-form-m,
 .modal-content .nft-form-top .nft-form-value {
@@ -7869,7 +7875,7 @@ form.sent .wpcf7-response-output {
   padding: 0;
   width: 30px;
 }
-.modal-content .nft-form-bottom a {
+.modal-content .nft-form-bottom button {
   -webkit-box-align: center;
   -ms-flex-align: center;
   -webkit-box-pack: center;
@@ -7885,6 +7891,9 @@ form.sent .wpcf7-response-output {
   justify-content: center;
   text-transform: uppercase;
   width: 100%;
+}
+.modal-content .nft-form-bottom button:disabled {
+  opacity: 0.5;
 }
 .dropdown {
   position: relative;

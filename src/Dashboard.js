@@ -15,7 +15,7 @@ import man2 from "./images/content/ares-nft-slider-1.png";
 import man3 from "./images/content/ares-nft-slider-3.png";
 import man4 from "./images/content/ares-nft-slider-4.png";
 import svg from "./images/content/ares-nft-title.svg";
-import React from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Footer from "./components/Footer";
 import logo from "./images/content/logo.svg";
 import modaltilte from "./images/content/mint-your-ares-nft-title.svg";
@@ -23,9 +23,73 @@ import videoone from "./images/IntroVideo.mp4";
 import videotwo from "./images/content/project-item.mp4";
 import nft1 from "./images/content/mint-your-ares-nft-1.png";
 import nftshape from "./images/content/mint-your-ares-nft-shape.png";
+import ConnectWalletModal from "./components/connectWallet/ConnectWalletModal";
+import { useWeb3React } from "@web3-react/core";
+import { getUserData, mint } from "./utils/web3Utils";
+import { CONTRACT_STATE } from "./config/constants";
+
 export default function Dashboard() {
+    const [modalState, setModalState] = useState(false);
+    const [mintAmount, setMintAmount] = useState(1)
+    const [userData, setUserData] = useState(undefined)
+    const [contractState, setContractState] = useState(0)
+    const { account, library } = useWeb3React();
+    const handleUserData = useCallback(
+        async () => {
+            const { status, _whiteListed, _constractState, _userBalance, _maxMintable } = await getUserData(account, library?.provider)
+            if (status) {
+                setUserData({
+                    whiteListed: _whiteListed,
+                    balance: Number(_userBalance),
+                    maxMintable: _maxMintable
+                })
+                setContractState(_constractState)
+            }
+        },
+        [account, library],
+    )
+    useEffect(() => {
+        if (!account || !library) return
+        handleUserData(account, library)
+        const timer = setInterval(() => {
+            handleUserData(account, library)
+        }, 15000)
+        return () => { clearInterval(timer) }
+    }, [account, library, handleUserData])
+    const connectWallet = () => {
+        setModalState(true)
+    }
+    let mintable = false
+    if (userData && userData.whiteListed && userData.maxMintable - userData.balance && contractState > CONTRACT_STATE.OFF) mintable = true
+    if (userData && !userData.whiteListed && userData.maxMintable - userData.balance && contractState > CONTRACT_STATE.WHITELIST) mintable = true
+    const handleMint = async () => {
+        let result
+        if (userData && userData.whiteListed && userData.maxMintable - userData.balance > 0 && contractState === CONTRACT_STATE.WHITELIST) {
+            result = await mint(mintAmount, account, library.provider, CONTRACT_STATE.WHITELIST)
+        }
+        if (userData && userData.maxMintable - userData.balance > 0 && contractState === CONTRACT_STATE.PRESALE) {
+            result = await mint(mintAmount, account, library.provider, CONTRACT_STATE.PRESALE)
+        }
+        if (userData && userData.maxMintable - userData.balance > 0 && contractState === CONTRACT_STATE.PUBLIC) {
+            result = await mint(mintAmount, account, library.provider, CONTRACT_STATE.PUBLIC)
+        }
+        console.log(result)
+    }
+    const addAmount = () => {
+        if (mintAmount >= userData.maxMintable - userData.balance) return
+        setMintAmount(mintAmount + 1)
+    }
+    const reduceAmount = () => {
+        if (mintAmount === 1) return
+        setMintAmount(mintAmount - 1)
+    }
     return (
         <>
+            {modalState && (
+                <ConnectWalletModal
+                    changeWalletListModalState={setModalState}
+                />
+            )}
             <div className="modal" id="mint-your-ares-modal">
                 <div className="modal-close">
                     <a
@@ -85,30 +149,35 @@ export default function Dashboard() {
                             <div className="nft-form">
                                 <div className="nft-form-top">
                                     <div className="nft-form-m">
-                                        <a href="#">
+                                        <button onClick={reduceAmount} disabled={!mintable}>
                                             <i className="fa-solid fa-minus"></i>
-                                        </a>
+                                        </button>
                                     </div>
                                     <div className="nft-form-value">
                                         <input
                                             id="nft-form-val"
                                             name="nft-form-val"
-                                            value="1"
-                                            min="1"
-                                            max="3"
+                                            value={mintAmount}
                                         />{" "}
                                         NFT
                                     </div>
                                     <div className="nft-form-p">
-                                        <a href="#">
+                                        <button onClick={addAmount} disabled={!mintable}>
                                             <i className="fa-solid fa-plus"></i>
-                                        </a>
+                                        </button>
                                     </div>
                                 </div>
                                 <div className="nft-form-bottom">
-                                    <a href="#" className="btn btn-primary">
-                                        Connect your wallet
-                                    </a>
+                                    {
+                                        account ? (
+                                            <button onClick={handleMint} className="btn btn-primary" disabled={!mintable}>
+                                                Mint
+                                            </button>
+                                        ) : (
+                                            <button onClick={connectWallet} className="btn btn-primary">
+                                                Connect your wallet
+                                            </button>
+                                    )}
                                 </div>
                             </div>
                         </div>
